@@ -28,12 +28,8 @@ export default async function Welcome(params, updateParams) {
 		if (keypress.toLowerCase() === 'a') {
 			pageStillHere = false;
 			tempKeypress = 'a';
-		} else if (keypress === '\u001b[D') {
-			pageStillHere = false;
-			tempKeypress = 'back';
 		}
 	}
 
 	if (tempKeypress === 'a') updateParams(changePage('Home', params));
-	if (tempKeypress === 'back') updateParams(changePage(params.previousPage, params));
 }
