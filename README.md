@@ -9,3 +9,7 @@ Please note that at present the graph can only plot values mapping a single inpu
 > The graphs of y = sin(x) and y = 1/x plot on the software
 
 ![The graphs of y = sin(x) and y = 1/x plot on the software](example-1.png)
+
+## Setting Up
+
+Clone the repository, and run `npm install` to install the necessary package used for getting the terminal inputs. Then run `npm run start` to start the program.
