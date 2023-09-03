@@ -12,5 +12,5 @@ export default async function Router(params, updateParams) {
 	clearWindow();
 
 	// render respective page, creating a copy of the params object to prevent rogue changes
-	Pages[params.currentPage]({ ...params }, updateParams);
+	Pages[params.pageStack[params.pageStack.length - 1]]({ ...params }, updateParams);
 }

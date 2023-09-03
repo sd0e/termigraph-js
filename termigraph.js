@@ -7,8 +7,7 @@ let params = {
 	width: process.stdout.columns,
 	height: process.stdout.rows,
 
-	currentPage: 'Welcome',
-	previousPage: null,
+	pageStack: ['Welcome'],
 
 	version: {
 		name: "v0.1 Alpha α"

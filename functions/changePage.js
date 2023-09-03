@@ -2,8 +2,7 @@
 export default function changePage(newPage, params) {
 	let copiedParams = { ...params }
 
-	copiedParams.previousPage = copiedParams.currentPage;
-	copiedParams.currentPage = newPage;
+	copiedParams.pageStack.push(newPage);
 
 	return copiedParams;
 }

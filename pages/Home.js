@@ -5,6 +5,7 @@ import MultiText from "../components/MultiText";
 import OptionList from "../components/OptionList";
 import awaitData from "../functions/awaitData";
 import changePage from '../functions/changePage';
+import goBack from '../functions/goBack';
 
 export default async function Home(params, updateParams) {
 	const options = [
@@ -29,6 +30,6 @@ export default async function Home(params, updateParams) {
 		}
 	}
 	
-	if (tempKeypress === 'back') updateParams(changePage(params.previousPage, params));
+	if (tempKeypress === 'back') updateParams(goBack(params));
 	if (tempKeypress === 'c') updateParams(changePage("Curves", params));
 }

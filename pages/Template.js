@@ -2,7 +2,7 @@
 import Header from "../components/Header";
 import MultiText from "../components/MultiText";
 import awaitData from "../functions/awaitData";
-import changePage from '../functions/changePage';
+import goBack from "../functions/goBack";
 
 export default async function Template(params, updateParams) {
 	Header(params);
@@ -18,5 +18,5 @@ export default async function Template(params, updateParams) {
 		}
 	}
 	
-	if (tempKeypress === 'back') updateParams(changePage(params.previousPage, params));
+	if (tempKeypress === 'back') updateParams(goBack(params));
 }
