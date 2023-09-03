@@ -9,7 +9,8 @@ import goBack from '../functions/goBack';
 
 export default async function Home(params, updateParams) {
 	const options = [
-		ChangePageText("C", "Add curve")
+		ChangePageText("C", "Add curve"),
+		ChangePageText("V", "View graph")
 	];
 
 	Header(params);
@@ -27,9 +28,13 @@ export default async function Home(params, updateParams) {
 		} else if (keypress.toLowerCase() === 'c') {
 			pageStillHere = false;
 			tempKeypress = 'c';
+		} else if (keypress.toLowerCase() === 'v') {
+			pageStillHere = false;
+			tempKeypress = 'v';
 		}
 	}
 	
 	if (tempKeypress === 'back') updateParams(goBack(params));
 	if (tempKeypress === 'c') updateParams(changePage("Curves", params));
+	if (tempKeypress === 'v') updateParams(changePage("Graph", params));
 }
