@@ -1,0 +1,24 @@
+{
+  "name": "termigraph",
+  "version": "1.0.0",
+  "description": "Node.js graphing calculator",
+  "main": "termigraph.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --experimental-modules --es-module-specifier-resolution=node termigraph.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sd0e/termigraph-js.git"
+  },
+  "author": "sd0e",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sd0e/termigraph-js/issues"
+  },
+  "homepage": "https://github.com/sd0e/termigraph-js#readme",
+  "dependencies": {
+    "ttys": "^0.0.3"
+  }
+}
