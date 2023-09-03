@@ -29,7 +29,6 @@ export default async function Curves(params, updateParams) {
 		} else {
 			if (params.selectedCurve !== -1) {
 				if (keypress.charCodeAt(0) === 8) {
-					console.log('yes');
 					params.curves[params.selectedCurve] = params.curves[params.selectedCurve].substring(0, params.curves[params.selectedCurve].length - 1);
 				} else {
 					params.curves[params.selectedCurve] += keypress;

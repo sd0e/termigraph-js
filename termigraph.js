@@ -25,8 +25,8 @@ let params = {
 	// stretch the x values by a certain amount to take into account the disparity between cell height and width
 	defaultXScaleFactor: 2.5,
 
-	// the resolution of plotting points, the lower the higher resolution (ideal is , otherwise too thick or thin)
-	resolution: 0.25,
+	// the resolution of plotting points, the lower the higher resolution but also longer plotting time; adapt in graph with "O" and "P" keys
+	resolution: 0.05,
 }
 
 hideCursor();
