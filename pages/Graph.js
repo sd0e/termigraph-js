@@ -33,7 +33,7 @@ export default async function Graph(params, updateParams) {
 				let value
 
 				try {
-					value = ParseMath(curve, false, { "x": idx * params.xStretch }) * params.yStretch;
+					value = ParseMath(curve, false, { "x": idx * params.xStretch, "y": idx / params.yStretch }) * params.yStretch;
 					const valuePositionY = startY + (topGraphValue - value);
 	
 					if (value <= topGraphValue && value >= -1 * topGraphValue) Text('*', params.curveColours[curveIdx], Math.round(xPointer), Math.round(valuePositionY));
