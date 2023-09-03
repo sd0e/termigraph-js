@@ -30,12 +30,18 @@ export default async function Graph(params, updateParams) {
 		if (curve && curve !== "") {
 			let xPointer = startX;
 			for (let idx = -rightGraphValue; idx <= rightGraphValue; idx += params.resolution) {
-				const value = ParseMath(curve, false, { "x": idx * params.xStretch }) * params.yStretch;
-				const valuePositionY = startY + (topGraphValue - value);
+				let value
 
-				if (value <= topGraphValue && value >= -1 * topGraphValue) Text('*', params.curveColours[curveIdx], Math.round(xPointer), Math.round(valuePositionY));
-
-				xPointer += params.defaultXScaleFactor * params.resolution;
+				try {
+					value = ParseMath(curve, false, { "x": idx * params.xStretch }) * params.yStretch;
+					const valuePositionY = startY + (topGraphValue - value);
+	
+					if (value <= topGraphValue && value >= -1 * topGraphValue) Text('*', params.curveColours[curveIdx], Math.round(xPointer), Math.round(valuePositionY));
+	
+					xPointer += params.defaultXScaleFactor * params.resolution;
+				} catch {
+					
+				}
 			}
 		}
 		curveIdx++;
