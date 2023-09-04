@@ -1,8 +1,8 @@
 import MultiText from "./MultiText";
 
 // renders a top header
-export default function Header(params, tip) {
-	let previousPages = '[←] ';
+export default function Header(params, tip, customSymbol) {
+	let previousPages = `[${customSymbol ? customSymbol : '←'}] `;
 
 	for (let idx = 1; idx < params.pageStack.length - 1; idx++) {
 		let tempText = `${params.pageStack[idx]} → `;

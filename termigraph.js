@@ -22,6 +22,11 @@ let params = {
 	// the factor by which the scroll changes on each press in graph screen
 	stretchSensitivity: 2,
 
+	xTranslate: 0,
+	yTranslate: 0,
+	// the amount by which to translate on each key press
+	translateSensitivity: 5,
+
 	// stretch the x values by a certain amount to take into account the disparity between cell height and width
 	defaultXScaleFactor: 2.5,
 
