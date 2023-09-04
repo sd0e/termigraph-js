@@ -91,6 +91,15 @@ export default async function Graph(params, updateParams) {
 
 			pageStillHere = false;
 			tempKeypress = 'update';
+		} else if (keypress === 'r') {
+			params.xStretch = 1;
+			params.yStretch = 1;
+			params.xTranslate = 1;
+			params.yTranslate = 1;
+			params.resolution = 0.05;
+
+			pageStillHere = false;
+			tempKeypress = 'update';
 		}
 	}
 	
