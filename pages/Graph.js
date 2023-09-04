@@ -49,9 +49,9 @@ export default async function Graph(params, updateParams) {
 		curveIdx++;
 	}
 
-	Text((((-1 * rightGraphValue) * params.xStretch)).toFixed(2).toString(), "white", startX, startY + Math.floor(graphHeight / 2));
+	Text((((rightGraphValue - wholeWidthValue) * params.xStretch)).toFixed(2).toString(), "white", startX, startY + Math.floor(graphHeight / 2));
 
-	const posXValue = (((-1 * rightGraphValue + wholeWidthValue) * params.xStretch)).toFixed(2).toString();
+	const posXValue = (((rightGraphValue) * params.xStretch)).toFixed(2).toString();
 	Text(posXValue, "white", params.width - 4 - posXValue.length, startY + Math.floor(graphHeight / 2));
 	
 	Text((((topGraphValue) / params.yStretch)).toFixed(2).toString(), "white", (Math.floor(graphWidth / 2)) + startX, startY);
@@ -80,13 +80,13 @@ export default async function Graph(params, updateParams) {
 				params.xTranslate -= params.translateSensitivity
 			} else if (keypress === '\u001b[A') {
 				// up key
-				params.yTranslate += params.translateSensitivity
+				params.yTranslate -= params.translateSensitivity
 			} else if (keypress === '\u001b[C') {
 				// right key
 				params.xTranslate += params.translateSensitivity
 			} else if (keypress === '\u001b[B') {
 				// down key
-				params.yTranslate -= params.translateSensitivity
+				params.yTranslate += params.translateSensitivity
 			}
 
 			pageStillHere = false;
