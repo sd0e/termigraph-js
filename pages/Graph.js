@@ -19,7 +19,7 @@ export default async function Graph(params, updateParams) {
 	const rightGraphValue = (Math.floor(graphWidth / 2) + params.xTranslate) / params.defaultXScaleFactor;
 	const wholeWidthValue = graphWidth / params.defaultXScaleFactor;
 
-	for (let idx = 0; idx <= graphWidth; idx++) {
+	if (topGraphValue > 0 && topGraphValue < wholeHeightValue) for (let idx = 0; idx <= graphWidth; idx++) {
 		Text('-', 'gray', startX + idx, topGraphValue + startY);
 	}
 
@@ -54,8 +54,8 @@ export default async function Graph(params, updateParams) {
 	const posXValue = (((-1 * rightGraphValue + wholeWidthValue) * params.xStretch)).toFixed(2).toString();
 	Text(posXValue, "white", params.width - 4 - posXValue.length, startY + topGraphValue);
 	
-	Text((((topGraphValue) / params.yStretch)).toFixed(2).toString(), "white", (Math.floor(graphWidth / 2) + params.xTranslate) + startX, startY);
-	Text((((topGraphValue - wholeHeightValue) / params.yStretch)).toFixed(2).toString(), "white", (Math.floor(graphWidth / 2) + params.xTranslate) + startX, startY + graphHeight);
+	Text((((topGraphValue) / params.yStretch)).toFixed(2).toString(), "white", (Math.floor(graphWidth / 2) - params.xTranslate) + startX, startY);
+	Text((((topGraphValue - wholeHeightValue) / params.yStretch)).toFixed(2).toString(), "white", (Math.floor(graphWidth / 2) - params.xTranslate) + startX, startY + graphHeight);
 
 	let pageStillHere = true;
 	let tempKeypress = null;
